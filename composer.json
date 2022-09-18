@@ -1,0 +1,60 @@
+{
+  "name": "php-design-pattern/command-bus",
+  "type": "library",
+  "description": "Interfaces for the design pattern command bus",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "design pattern",
+    "command bus",
+    "interface",
+    "contract"
+  ],
+  "homepage": "https://github.com/php-design-pattern/command-bus",
+  "support": {
+    "email": "github-support@swarmtech.fr"
+  },
+  "config": {
+    "process-timeout": 600,
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "authors": [
+    {
+      "name": "gary gitton",
+      "homepage": "https://www.garygitton.fr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DesignPattern\\CommandBus\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DesignPatternTest\\CommandBus\\": "test/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "php-design-pattern/cqrs": "^8.1"
+  },
+  "require-dev": {
+    "laminas/laminas-coding-standard": "*",
+    "phpunit/phpunit": "*",
+    "psalm/plugin-phpunit": "*",
+    "vimeo/psalm": "*"
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": "phpunit --colors=always",
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "static-analysis": "psalm --shepherd --stats"
+  }
+}
